@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const audioManager = new AudioManager();
+    audioManager.start();
     // --- Configurações (Traduzidas do Python) ---
     const BAUD_RATE = 115200;
     const TRIGGER_YEAR_SPECIAL_SEQUENCE = "1963";
@@ -9,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const CATEGORIAS = ["Política", "Cultura", "Direitos Humanos", "Economia", "Conflitos", "Resistência", "Internacional"];
     // --- Base de Dados (Extraída do Memorial da Democracia) ---
     document.addEventListener('DOMContentLoaded', () => {
+    const audioManager = new AudioManager();
+    audioManager.start();
     console.log('Eventos de 1964:', dadosAnos['1964']);
     document
         .getElementById('manual-year-button')

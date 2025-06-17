@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!eventos) return alert(`Ano ${ano} não encontrado.`);
         processarAno(ano)
     }
+    //autoplay
+    function setVideoSrcWithAutoplay(url) {
+        if (!url) return '';
+        const hasQuery = url.includes('?');
+        return url + (hasQuery ? '&' : '?') + 'autoplay=1';
+    }
 
     // --- Referências aos Elementos do HTML (DOM) ---
     const connectButton = document.getElementById('connect-button');
@@ -180,7 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // NEW CODE:
             if (evento.videoUrl) {
-                displayVideo.src = evento.videoUrl;
+                //displayVideo.src = evento.videoUrl;
+                displayVideo.src = setVideoSrcWithAutoplay(evento.videoUrl);
                 displayVideo.classList.remove('hidden');
             } else if (evento.gifUrl) {
                 displayGif.src = evento.gifUrl;

@@ -1,6 +1,50 @@
 const dadosAnos = {
     "1964": [
         {
+            "date": "1 de janeiro",
+            "title": "1985-2025: 40 anos de democracia",
+            "description": " reportagem especial sobre o processo de redemocratização após 21 anos da ditadura militar ",
+            "videoUrl": "https://www.youtube.com/embed/ZEXwK6w4P3c?si=ftyIhTtIOLmkyiIs",
+            "categoria": [
+                "Política",
+                "Resistência"
+            ]
+        },
+        {
+            "date": "5 de janeiro",
+            "title": "Um passo atrás: foi mesmo uma Ditadura?",
+            "description": "As principais falas dos personagens que participaram da reunião histórica",
+            "videoUrl": "https://www.youtube.com/embed/XXvkr1is8BA?si=t0FBhuFlCxLSXOea",
+            "categoria": [
+                "Política",
+                "Resistência"
+            ]
+        },
+
+
+        {
+            "date": "10 de janeiro",
+            "title": "Matéria especial sobre a reunião que definiu e validou o Ato Institucional Nº 5",
+            "description": "Rede Globo, 6 de dezembro de 1998",
+            "videoUrl": "https://www.youtube.com/embed/ZFllFYFyBAQ?si=7d5zC9SxOFaPZqke",
+            "categoria": [
+                "Política",
+                "Resistência"
+            ]
+        }, 
+        {
+            "date": "15 de janeiro",
+            "title": "A familia Paiva e a ditadura",
+            "description": "Ainda estou aqui ganha oscar",
+            "videoUrl": "https://www.youtube.com/embed/wnlle3OsvbM?si=IKsrjEfjb35H7A5V",
+            "categoria": [
+                "Política",
+                "Resistência"
+            ]
+        },
+
+        
+        {
             "date": "13 de março",
             "title": "Comício da Central: 300 mil apoiam reformas",
             "description": "Goulart expropria terras, toma refinarias e defende direito de voto dos analfabetos",
@@ -63,7 +107,7 @@ const dadosAnos = {
             "title": "Golpe militar depõe governo constitucional",
             "description": "1º de abril de 1964: o primeiro dia de uma ditadura militar que durou 21 anos",
             "imageUrl": "https://memorialdademocracia.com.br/publico/image/352",
-            "videoUrl": "https://www.youtube.com/embed/Ctd1OcvZobE?si=ha0EhOZd_d21CHjs", //incorportar!
+            "videoUrl": "https://www.youtube.com/embed/NZLQniu4XNg?si=KzvdSg8P5wHcFF7G", //incorportar!
             "categoria": [
                 "Política",
                 "Conflitos"
@@ -1227,6 +1271,7 @@ const dadosAnos = {
                 "Política"
             ]
         },
+      
         {
             "date": "Fevereiro",
             "title": "Ulysses atua para resgatar oposição",

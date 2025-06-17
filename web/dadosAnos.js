@@ -1,7 +1,7 @@
 const dadosAnos = {
     "1964": [
         {
-            "date": "1 de janeiro",
+            "date": "",
             "title": "1985-2025: 40 anos de democracia",
             "description": " reportagem especial sobre o processo de redemocratização após 21 anos da ditadura militar ",
             "videoUrl": "https://www.youtube.com/embed/ZEXwK6w4P3c?si=ftyIhTtIOLmkyiIs",
@@ -11,7 +11,7 @@ const dadosAnos = {
             ]
         },
         {
-            "date": "5 de janeiro",
+            "date": "",
             "title": "Um passo atrás: foi mesmo uma Ditadura?",
             "description": "As principais falas dos personagens que participaram da reunião histórica",
             "videoUrl": "https://www.youtube.com/embed/XXvkr1is8BA?si=t0FBhuFlCxLSXOea",
@@ -23,16 +23,16 @@ const dadosAnos = {
 
 
         {
-            "date": "10 de janeiro",
+            "date": "",
             "title": "Matéria especial sobre a reunião que definiu e validou o Ato Institucional Nº 5",
-            "description": "Rede Globo, 6 de dezembro de 1998",
+            "description": "por rede Globo, 6 de dezembro de 1998",
             "videoUrl": "https://www.youtube.com/embed/ZFllFYFyBAQ?si=7d5zC9SxOFaPZqke",
             "categoria": [
                 "Política",
                 "Resistência"
             ]
         }, 
-        {
+       /* {
             "date": "15 de janeiro",
             "title": "A familia Paiva e a ditadura",
             "description": "Ainda estou aqui ganha oscar",
@@ -41,7 +41,7 @@ const dadosAnos = {
                 "Política",
                 "Resistência"
             ]
-        },
+        },*/
 
         
         {
@@ -270,6 +270,7 @@ const dadosAnos = {
             "title": "'Podem me prender, podem me bater...'",
             "description": "que eu não mudo de opinião': musical mostra a força da resistência cultural",
             "imageUrl": "https://memorialdademocracia.com.br/publico/image/478",
+            "videoUrl": "https://www.youtube.com/embed/tzUIA4AVqF4?si=QdcNe26rEqYIF1Km",
             "categoria": [
                 "Cultura",
                 "Resistência"
@@ -1341,6 +1342,7 @@ const dadosAnos = {
             "title": "Caetano e Gilberto Gil: 'Back in Bahia'",
             "description": "Músicos voltam depois de quatro anos de exílio e lançam álbuns históricos",
             "imageUrl": "https://memorialdademocracia.com.br/publico/image/870",
+            "videoUrl": "https://www.youtube.com/embed/msknQAdP0DI?si=IG6ugTGhkS_XLfAn",
             "categoria": [
                 "Cultura",
                 "Resistência"
@@ -2953,11 +2955,14 @@ const dadosAnos = {
             "title": "Vai passar a noite da ditadura militar",
             "description": "Samba de Chico celebra a virada da 'página infeliz da nossa história'",
             "imageUrl": "https://memorialdademocracia.com.br/publico/image/6689",
+            "videoUrl": "https://www.youtube.com/embed/P6C5bZOr3xQ?si=pmFkGTuSE8seSbb6", //incorportar!
             "categoria": [
                 "Cultura",
                 "Resistência",
                 "Política"
             ]
-        }
+        },
     ]
 };
+
+

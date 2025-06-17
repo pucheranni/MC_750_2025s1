@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const audioManager = new AudioManager();
-    audioManager.start();
+    let audioStarted = false;
     // --- Configurações (Traduzidas do Python) ---
     const BAUD_RATE = 115200;
     const TRIGGER_YEAR_SPECIAL_SEQUENCE = "1963";
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Base de Dados (Extraída do Memorial da Democracia) ---
     document.addEventListener('DOMContentLoaded', () => {
     const audioManager = new AudioManager();
-    audioManager.start();
+    let audioStarted = false;
     console.log('Eventos de 1964:', dadosAnos['1964']);
     document
         .getElementById('manual-year-button')
@@ -153,6 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ultimoAnoRecebido = anoStr;
         eventoAtualIndex = 0; // Reseta o índice para o novo ano
+
+        // configura audio
+        if (!audioStarted) {
+          audioStarted = true;
+          audioManager.start();
+        }
+        if (anoStr === "1964") {
+          audioManager.restart();
+        }
 
         if (anoStr === TRIGGER_YEAR_SPECIAL_SEQUENCE) {
             iniciarSequenciaEspecial();

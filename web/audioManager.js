@@ -1,19 +1,20 @@
 window.AudioManager = class AudioManager {
     constructor() {
-        this.FADE_DURATION = 2000;
+        this.FADE_DURATION = 5000;
         this.VOLUME = 0.7;
 
         this.track1 = new Howl({
             src: ['/audio/PauloCesarPinheiro_Pesadelo.mp3'],
             volume: 0,
+            preload: true,
         });
 
         this.track2 = new Howl({
             src: ['/audio/MiltonNascimento&ChicoBuarque_OQueSera-AFlorDaPele.mp3'],
             volume: 0,
+            preload: true,
         });
-
-        this.currentTrack = 'track1';
+        this.currentTrack = null;
         this.fadeTimeout = null;
     }
 
@@ -24,48 +25,59 @@ window.AudioManager = class AudioManager {
     }
 
     restart() {
-        clearTimeout(this.fadeTimeout);
-        this.track1.fade(this.track1.volume(), 0, this.FADE_DURATION);
-        this.track2.fade(this.track2.volume(), 0, this.FADE_DURATION);
+      clearTimeout(this.fadeTimeout);
 
-        setTimeout(() => {
-            this.track1.stop();
-            this.track2.stop();
+      // Remove all 'end' listeners to prevent surprise crossfades
+      this.track1.off('end');
+      this.track2.off('end');
 
-            this.track1.seek(0);
-            this.track2.seek(0);
+      // Stop both tracks immediately
+      if (this.track1.playing()) this.track1.stop();
+      if (this.track2.playing()) this.track2.stop();
 
-            this.fadeIn(this.track1);
-            this.currentTrack = 'track1';
-            this.setupEndListener('track1');
-        }, this.FADE_DURATION);
+      // Seek both to the beginning
+      this.track1.seek(0);
+      this.track2.seek(0);
+
+      // Set volumes to zero immediately (just in case)
+      this.track1.volume(0);
+      this.track2.volume(0);
+
+      // Play and fade in track1 right away
+      this.track1.play();
+      this.track1.fade(0, this.VOLUME, this.FADE_DURATION);
+
+      this.currentTrack = 'track1';
+      this.setupEndListener('track1');
     }
 
     fadeIn(track) {
+      if (!track.playing()){
         track.volume(0);
         track.play();
-        track.fade(0, this.VOLUME, this.FADE_DURATION);
+      }
+      track.fade(0, this.VOLUME, this.FADE_DURATION);
     }
 
     fadeOut(track) {
-        track.fade(track.volume(), 0, this.FADE_DURATION);
-        setTimeout(() => {
-            track.stop();
-        }, this.FADE_DURATION);
+      track.fade(track.volume(), 0, this.FADE_DURATION);
+      setTimeout(() => {
+                 track.stop();
+                 }, this.FADE_DURATION);
     }
 
     startCrossfade(fromName, toName) {
-        const from = this.getTrack(fromName);
-        const to = this.getTrack(toName);
+      const from = this.getTrack(fromName);
+      const to = this.getTrack(toName);
 
-        this.fadeOut(from);
-        this.fadeIn(to);
+      this.fadeOut(from);
+      this.fadeIn(to);
 
-        this.currentTrack = toName;
+      this.currentTrack = toName;
 
-        this.fadeTimeout = setTimeout(() => {
-            this.setupEndListener(toName);
-        }, this.FADE_DURATION);
+      this.fadeTimeout = setTimeout(() => {
+                                    this.setupEndListener(toName);
+                                    }, this.FADE_DURATION);
     }
 
     setupEndListener(trackName) {
